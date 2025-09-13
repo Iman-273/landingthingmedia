@@ -9,29 +9,27 @@ const Hero = () => {
         <img
           src={heroImage}
           alt="Professional business service contractors in Seattle"
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover" // No opacity
         />
-        <div className="absolute inset-0 accent-gradient" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
-      <h1
-  className="text-2xl sm:text-5xl lg:text-5xl font-heading mb-4 sm:mb-6 leading-tight"
-  data-aos="fade-up"
-  data-aos-delay="100"
->
-  {/* First line */}
-  <span className="block">
-    Scale Your <span className="text-gradient">Seattle Business Service Business</span>
-  </span>
-
-  {/* Second line */}
-  <span className="block">
-    With <span className="text-gradient">Predictable Growth</span>
-  </span>
-</h1>
-
+        <h1
+          className="text-3xl sm:text-5xl lg:text-6xl font-heading mb-4 sm:mb-6 leading-tight"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <span className="block">
+            Scale Your{" "}
+            <span className="text-gradient">
+              Seattle Business Service Business
+            </span>
+          </span>
+          <span className="block">
+            With <span className="text-gradient">Predictable Growth</span>
+          </span>
+        </h1>
 
         <p
           className="text-base sm:text-lg md:text-2xl text-muted-foreground mb-6 sm:mb-8 max-w-3xl mx-auto font-body"
@@ -41,9 +39,7 @@ const Hero = () => {
           <span className="block">
             More leads. Less stress. Let Thing Media bring you customers
           </span>
-          <span className="block">
-            while you focus on running your business.
-          </span>
+          <span className="block">while you focus on running your business.</span>
         </p>
 
         <Button
