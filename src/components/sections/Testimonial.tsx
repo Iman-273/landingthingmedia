@@ -1,5 +1,9 @@
 "use client";
 
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import { Quote, Star } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
@@ -23,11 +27,24 @@ const testimonials = [
 ];
 
 const Testimonial = () => {
+  // Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-in-out",
+    });
+  }, []);
+
   return (
-    <section className="py-16 sm:py-20 bg-muted/30" data-aos="fade-up">
+    <section className="py-16 sm:py-20 bg-muted/30">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="text-center mb-10 sm:mb-12">
+        <div
+          className="text-center mb-10 sm:mb-12"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6 text-sm sm:text-base tracking-wide uppercase">
             <Star className="w-5 h-5" aria-hidden="true" />
             <span className="font-bold text-lg sm:text-xl text-gradient">
@@ -52,7 +69,11 @@ const Testimonial = () => {
         >
           {testimonials.map((item, i) => (
             <SwiperSlide key={i} className="!overflow-visible">
-              <div className="relative bg-card p-6 sm:p-10 md:p-12 rounded-2xl shadow-medium border border-border/50 flex flex-col justify-between h-[350px] sm:h-[400px] overflow-visible">
+              <div
+                className="relative bg-card p-6 sm:p-10 md:p-12 rounded-2xl shadow-medium border border-border/50 flex flex-col justify-between h-[350px] sm:h-[400px] overflow-visible"
+                data-aos="fade-up"
+                data-aos-delay={i * 200} // stagger animation for each slide
+              >
                 {/* Quote icon */}
                 <div className="absolute -top-5 sm:-top-6 left-6 sm:left-8">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-full flex items-center justify-center shadow-lg">
@@ -93,7 +114,11 @@ const Testimonial = () => {
         </Swiper>
 
         {/* CTA Text */}
-        <div className="text-center mt-10 sm:mt-12">
+        <div
+          className="text-center mt-10 sm:mt-12"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
           <p className="text-sm sm:text-base text-muted-foreground">
             Join{" "}
             <span className="font-semibold text-foreground">

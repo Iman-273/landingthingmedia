@@ -5,9 +5,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const googleReviews = [
-  { src: "/images/reviews/review1.png", alt: "Google Review 1" },
-  { src: "/images/reviews/review2.png", alt: "Google Review 2" },
-  { src: "/images/reviews/review3.png", alt: "Google Review 3" },
+  { src: "/assets/review.png", alt: "Google Review 1" },
+  { src: "/assets/review.png", alt: "Google Review 2" },
+  { src: "/assets/review.png", alt: "Google Review 3" },
 ];
 
 const GoogleReviews = () => {
@@ -19,7 +19,7 @@ const GoogleReviews = () => {
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6 text-sm sm:text-base tracking-wide uppercase">
             {/* Skeuomorphic Star Icon */}
             <img
-              src="/src/icons/star.png"
+              src="/icons/star.png"
               alt="Star Icon"
               className="w-5 h-5"
             />

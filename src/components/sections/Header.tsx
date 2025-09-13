@@ -8,9 +8,9 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img
-              src="src/assets/logo.png"
+              src="/assets/logo.png"
               alt="Thing Media Logo"
-              className="h-10 w-auto scale-150" // height fix = h-10 (40px), zoomed 1.5x
+              className="h-14 w-auto" // height badhayi, scale hata diya
             />
           </div>
 

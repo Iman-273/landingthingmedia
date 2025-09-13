@@ -6,7 +6,13 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
           {/* Logo */}
-          <Logo size="md" />
+          <div className="flex items-center">
+            <img
+              src="/assets/logo.png" // public folder path
+              alt="Thing Media Logo"
+              className="h-14 w-auto" // logo size increased (56px)
+            />
+          </div>
 
           {/* Text */}
           <div className="text-center md:text-right">

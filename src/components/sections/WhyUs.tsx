@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"; // assuming you're using shadcn
 const WhyUs = () => {
   const differentiators = [
     {
-      icon: "src/icons/mappin.png", // skeuomorphic map/location icon
+      icon: "/icons/mappin.png", // skeuomorphic map/location icon
       title: "Local Expertise",
       description:
         "We understand the Seattle homeowner market — because we live and work here too.",
@@ -12,7 +12,7 @@ const WhyUs = () => {
       delay: "100",
     },
     {
-      icon: "src/icons/award.png", // skeuomorphic award/trophy icon
+      icon: "/icons/award.png", // skeuomorphic award/trophy icon
       title: "White-Glove Service",
       description:
         "No cookie-cutter campaigns — we tailor every system to your business so it grows with you.",
@@ -20,7 +20,7 @@ const WhyUs = () => {
       delay: "200",
     },
     {
-      icon: "src/icons/target.png", // skeuomorphic target/goal icon
+      icon: "/icons/target.png", // skeuomorphic target/goal icon
       title: "Results-Driven",
       description:
         "Our only focus is helping you win more jobs, month after month.",

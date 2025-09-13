@@ -3,19 +3,19 @@ import { AlertTriangle } from "lucide-react";
 const Problem = () => {
   const painPoints = [
     {
-      icon: "src/assets/time.png", // your image file
+      icon: "/assets/time.png", // your image file
       title: "Outdated Marketing",
       description:
         "Relying on word-of-mouth or old ads means fewer calls and less growth.",
     },
     {
-      icon: "src/assets/more.png",
+      icon: "/assets/more.png",
       title: "Inconsistent Leads",
       description:
         "One month is busy, the next is quiet—your pipeline feels like a rollercoaster.",
     },
     {
-      icon: "src/assets/lead.png",
+      icon: "/assets/lead.png",
       title: "Chasing Customers",
       description:
         "Instead of focusing on jobs, you’re stuck chasing down customers.",
@@ -29,7 +29,7 @@ const Problem = () => {
           <p className="inline-flex items-center gap-2 bg-destructive/10 text-destructive px-4 py-2 sm:px-6 sm:py-3 rounded-full mb-6 text-base sm:text-lg md:text-xl">
             {/* Skeuomorphic Alert Icon */}
             <img
-              src="src/icons/alert.png"
+              src="/icons/alert.png"
               alt="Alert Icon"
               className="w-5 h-5 sm:w-6 sm:h-6 object-contain"
             />
