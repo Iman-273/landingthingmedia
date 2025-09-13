@@ -75,11 +75,7 @@ const Testimonial = () => {
                 data-aos-delay={i * 200} // stagger animation for each slide
               >
                 {/* Quote icon */}
-                <div className="absolute -top-5 sm:-top-6 left-6 sm:left-8">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary rounded-full flex items-center justify-center shadow-lg">
-                    <Quote className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                  </div>
-                </div>
+             
 
                 {/* Stars */}
                 <div className="flex gap-1 mb-5 sm:mb-6 justify-center">

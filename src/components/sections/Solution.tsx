@@ -87,7 +87,7 @@ const Solution = () => {
     <div className="text-center mb-5 sm:mb-6">
       {/* Replace TrendingUp with skeuomorphic growth icon */}
       <img
-        src="/assets/icons/growth.png"
+        src="/icons/growth.png"
         alt="Predictable Growth Icon"
         className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 object-contain"
       />

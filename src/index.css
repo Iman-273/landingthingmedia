@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 /* Thing Media Design System - Minimalist & Professional */
+/* globals.css ya app.css me */
 
 @layer base {
   :root {
@@ -170,6 +171,10 @@
   .transition-smooth {
     transition: var(--transition-smooth);
   }
+
+  .logo-text {
+  font-family: 'Montserrat', sans-serif;
+}
 
   .transition-bounce {
     transition: var(--transition-bounce);

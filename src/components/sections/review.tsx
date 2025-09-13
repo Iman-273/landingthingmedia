@@ -5,9 +5,20 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const googleReviews = [
-  { src: "/assets/review.png", alt: "Google Review 1" },
-  { src: "/assets/review.png", alt: "Google Review 2" },
-  { src: "/assets/review.png", alt: "Google Review 3" },
+  { src: "/assets/review1.png", alt: "Google Review 1" },
+  { src: "/assets/review2.png", alt: "Google Review 2" },
+  { src: "/assets/review3.png", alt: "Google Review 3" },
+  { src: "/assets/review4.png", alt: "Google Review 4" },
+  { src: "/assets/review5.png", alt: "Google Review 5" },
+  { src: "/assets/review6.png", alt: "Google Review 6" },
+  { src: "/assets/review7.png", alt: "Google Review 7" },
+  { src: "/assets/review8.png", alt: "Google Review 8" },
+  { src: "/assets/review9.png", alt: "Google Review 9" },
+  { src: "/assets/review10.png", alt: "Google Review 10" },
+  { src: "/assets/review11.png", alt: "Google Review 11" },
+  { src: "/assets/review12.png", alt: "Google Review 12" },
+  { src: "/assets/review13.png", alt: "Google Review 13" },
+  { src: "/assets/review14.png", alt: "Google Review 14" },
 ];
 
 const GoogleReviews = () => {
@@ -17,7 +28,6 @@ const GoogleReviews = () => {
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6 text-sm sm:text-base tracking-wide uppercase">
-            {/* Skeuomorphic Star Icon */}
             <img
               src="/icons/star.png"
               alt="Star Icon"
@@ -46,11 +56,11 @@ const GoogleReviews = () => {
         >
           {googleReviews.map((review, i) => (
             <SwiperSlide key={i} className="flex justify-center">
-              <div className="bg-card rounded-2xl shadow-medium border border-border/50 overflow-hidden max-w-3xl w-full">
+              <div className="bg-card rounded-2xl shadow-medium border border-border/50 overflow-hidden max-w-3xl w-full flex justify-center items-center">
                 <img
                   src={review.src}
                   alt={review.alt}
-                  className="w-full h-auto"
+                  className="w-full h-auto object-contain max-h-[500px]"
                 />
               </div>
             </SwiperSlide>
