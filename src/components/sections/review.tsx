@@ -18,33 +18,33 @@ const googleReviews = [
 
 const GoogleReviews = () => {
   return (
-    <section className="py-16 sm:py-20 bg-background">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+    <section className="py-12 md:py-20 bg-background">
+      <div className="max-w-7xl mx-auto px-4">
         {/* Section Header */}
         <div
-          className="text-center mb-10 sm:mb-12"
+          className="text-center mb-10"
           data-aos="fade-up"
           data-aos-duration="1000"
         >
-          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6 text-sm sm:text-base tracking-wide uppercase">
+          <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6 text-sm tracking-wide uppercase">
             <img src="/icons/star.png" alt="Star Icon" className="w-5 h-5" />
-            <span className="font-bold text-lg sm:text-xl text-gradient">
+            <span className="font-bold text-lg text-gradient">
               Google Reviews
             </span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-heading mb-6 sm:mb-8">
+          <h2 className="text-3xl md:text-4xl font-heading mb-6">
             What Our Clients Say on{" "}
             <span className="text-gradient">Google</span>
           </h2>
         </div>
 
-        {/* Masonry Layout */}
-        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
+        {/* Static Masonry Layout (always 4 columns) */}
+        <div className="columns-4 gap-4">
           {googleReviews.map((review, i) => (
             <div
               key={i}
-              className="mb-4 break-inside-avoid bg-card rounded-xl shadow-soft border border-border/50 overflow-hidden hover:shadow-medium transition-smooth hover:-translate-y-2"
+              className="mb-4 break-inside-avoid bg-card rounded-xl shadow-soft border border-border/50 overflow-hidden hover:shadow-medium transition-transform duration-300 ease-in-out hover:-translate-y-2"
               data-aos="fade-up"
               data-aos-delay={review.delay}
               data-aos-duration="1000"
@@ -52,7 +52,8 @@ const GoogleReviews = () => {
               <img
                 src={review.src}
                 alt={review.alt}
-                className="w-full h-auto object-contain"
+                loading="lazy"
+                className="w-full h-auto object-cover"
               />
             </div>
           ))}
