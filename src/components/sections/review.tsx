@@ -22,22 +22,22 @@ const googleReviews = [
 const GoogleReviews = () => {
   useEffect(() => {
     AOS.init({
-      duration: 800,
+      duration: 600,
       once: true,
       easing: "ease-in-out",
+      mirror: false,
+      anchorPlacement: "top-bottom",
     });
+
+    window.addEventListener("load", AOS.refresh);
+    return () => window.removeEventListener("load", AOS.refresh);
   }, []);
 
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-background">
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-
         {/* Section Header */}
-        <div
-          className="text-center mb-8 sm:mb-12"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
+        <div className="text-center mb-8 sm:mb-12" data-aos="fade-up">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full mb-6 text-sm sm:text-base tracking-wide uppercase">
             <img src="/icons/star.png" alt="Star Icon" className="w-5 h-5" />
             <span className="font-bold text-lg sm:text-xl text-gradient">
@@ -53,7 +53,6 @@ const GoogleReviews = () => {
         {/* --- Mobile layout (2 columns grid) --- */}
         <div className="grid grid-cols-2 gap-4 sm:hidden">
           {googleReviews.map((review, i) => {
-            // Vicky Chong + KZ stacked together
             if (review.alt === "Vicky Chong") {
               return (
                 <div
@@ -62,8 +61,10 @@ const GoogleReviews = () => {
                   data-aos="fade-up"
                   data-aos-delay={i * 100}
                 >
-                  {/* Vicky Chong card */}
-                  <div className="bg-card rounded-xl shadow-soft border border-border/50 overflow-hidden hover:shadow-medium transition-transform duration-300 ease-in-out">
+                  <div
+                    className="bg-card rounded-xl shadow-soft border border-border/50 overflow-hidden hover:shadow-medium transition-transform duration-300 ease-in-out"
+                    style={{ minHeight: "200px" }}
+                  >
                     <img
                       src={review.src}
                       alt={review.alt}
@@ -71,9 +72,10 @@ const GoogleReviews = () => {
                       loading="lazy"
                     />
                   </div>
-
-                  {/* KZ card inside same cell */}
-                  <div className="bg-card rounded-xl shadow-soft border border-border/50 overflow-hidden hover:shadow-medium transition-transform duration-300 ease-in-out">
+                  <div
+                    className="bg-card rounded-xl shadow-soft border border-border/50 overflow-hidden hover:shadow-medium transition-transform duration-300 ease-in-out"
+                    style={{ minHeight: "200px" }}
+                  >
                     <img
                       src="/assets/review3.png"
                       alt="KZ"
@@ -85,21 +87,22 @@ const GoogleReviews = () => {
               );
             }
 
-            // Skip KZ in loop to avoid duplicate
             if (review.alt === "KZ") return null;
 
-            // Other reviews normal
             return (
               <div
                 key={i}
                 data-aos="fade-up"
                 data-aos-delay={i * 100}
-                className="bg-card rounded-xl shadow-soft border border-border/50 overflow-hidden hover:shadow-medium transition-transform duration-300 ease-in-out hover:-translate-y-2"
+                className="mb-4 break-inside-avoid bg-card rounded-xl shadow-soft border 
+                           border-border/50 overflow-hidden hover:shadow-medium 
+                           transition-transform duration-300 ease-in-out hover:-translate-y-2"
+                style={{ minHeight: "200px" }}
               >
                 <img
                   src={review.src}
                   alt={review.alt}
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-contain"
                   loading="lazy"
                 />
               </div>
@@ -109,81 +112,24 @@ const GoogleReviews = () => {
 
         {/* --- Desktop layout (columns masonry) --- */}
         <div className="hidden sm:block">
-          <div className="columns-2 md:columns-3 lg:columns-4 gap-4">
-            {googleReviews.map((review, i) => {
-              // Siyin Li + Justin Cambra stacked
-              if (review.alt === "Siyin Li") {
-                return (
-                  <div
-                    key={i}
-                    className="mb-4 break-inside-avoid"
-                    data-aos="fade-up"
-                    data-aos-delay={i * 100}
-                  >
-                    <div className="mb-4 bg-card rounded-xl shadow-soft border border-border/50 overflow-hidden hover:shadow-medium transition-transform duration-300 ease-in-out">
-                      <img
-                        src={review.src}
-                        alt={review.alt}
-                        className="w-full h-auto object-contain"
-                        loading="lazy"
-                      />
-                    </div>
-                    <div className="bg-card rounded-xl shadow-soft border border-border/50 overflow-hidden hover:shadow-medium transition-transform duration-300 ease-in-out">
-                      <img
-                        src="/assets/review6.png"
-                        alt="Justin Cambra"
-                        className="w-full h-auto object-contain"
-                        loading="lazy"
-                      />
-                    </div>
-                  </div>
-                );
-              }
-
-              // Skip Justin Cambra duplicate
-              if (review.alt === "Justin Cambra") return null;
-
-              // Special cases with extra bottom height
-              if (
-                review.alt === "Phil Greely" ||
-                review.alt === "Vicky Chong" ||
-                review.alt === "Yu Liu"
-              ) {
-                return (
-                  <div
-                    key={i}
-                    data-aos="fade-up"
-                    data-aos-delay={i * 100}
-                    className="mb-4 break-inside-avoid bg-card rounded-xl shadow-soft border border-border/50 overflow-hidden hover:shadow-medium transition-transform duration-300 ease-in-out"
-                    style={{ paddingBottom: "16px", minHeight: "120px" }}
-                  >
-                    <img
-                      src={review.src}
-                      alt={review.alt}
-                      className="w-full h-auto object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                );
-              }
-
-              // Default cards
-              return (
-                <div
-                  key={i}
-                  data-aos="fade-up"
-                  data-aos-delay={i * 100}
-                  className="mb-4 break-inside-avoid bg-card rounded-xl shadow-soft border border-border/50 overflow-hidden hover:shadow-medium transition-transform duration-300 ease-in-out hover:-translate-y-2"
-                >
-                  <img
-                    src={review.src}
-                    alt={review.alt}
-                    className="w-full h-auto object-cover"
-                    loading="lazy"
-                  />
-                </div>
-              );
-            })}
+          <div className="columns-2 md:columns-3 lg:columns-4 gap-6 space-y-6">
+            {googleReviews.map((review, i) => (
+              <div
+                key={i}
+                data-aos="fade-up"
+                data-aos-delay={i * 100}
+                className="break-inside-avoid mb-6 bg-card rounded-xl shadow-soft border 
+                           border-border/50 overflow-hidden hover:shadow-medium 
+                           transition-transform duration-300 ease-in-out hover:-translate-y-2"
+              >
+                <img
+                  src={review.src}
+                  alt={review.alt}
+                  className="w-full h-auto object-contain"
+                  loading="lazy"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
